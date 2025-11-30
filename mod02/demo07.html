@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Hello World</title>
+    <!-- 引入 React 與 Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function MyDiv() {
+        // 3元運算條件渲染範例
+
+        const showMsg = true; // 可以改為 false 來測試預設訊息
+        const msg = "這是條件渲染訊息";
+        return (
+          <div>
+            {showMsg ? (
+              <p style={{ color: "blue" }}>{msg}</p>
+            ) : (
+              <p style={{ color: "red" }}>這是預設訊息</p>
+            )}
+          </div>
+        );
+      }
+      const root = document.getElementById("root");
+      ReactDOM.createRoot(root).render(<MyDiv />);
+    </script>
+  </body>
+</html>

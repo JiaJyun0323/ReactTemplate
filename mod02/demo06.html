@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Hello World</title>
+    <!-- 引入 React 與 Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function MyDiv() {
+        // 條件渲染範例
+        // 在 JavaScript（和 JSX）中，Truthy 指的是在條件判斷時會被當作 true 的值。
+        // 常見的 Truthy 值有：非空字串、非零數字、物件、陣列等。
+
+        // 在條件渲染時，例如：
+        // 如果 showMsg 是 Truthy（如 true、1、"abc"），則 <p>訊息</p> 會被渲染。
+        // 如果是 Falsy（如 false、0、""、null、undefined），則不會渲染。
+
+        const showMsg = true; // 可以改為 false 來測試預設訊息
+        const msg = "這是條件渲染訊息";
+        return (
+          <div>
+            {showMsg && <p style={{ color: "blue" }}>{msg}</p>}
+            {!showMsg && <p style={{ color: "red" }}>這是預設訊息</p>}
+          </div>
+        );
+      }
+      const root = document.getElementById("root");
+      ReactDOM.createRoot(root).render(<MyDiv />);
+    </script>
+  </body>
+</html>

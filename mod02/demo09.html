@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Hello World</title>
+    <!-- 引入 React 與 Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const userInfos = [
+        { id: 1, name: "Alice" },
+        { id: 2, name: "Bob" },
+        { id: 3, name: "Charlie" },
+      ];
+      const mydiv = (
+        <ul>
+          {userInfos.map((user) => (
+            <li key={user.id}>
+              ID: {user.id} , Name: {user.name}
+            </li>
+          ))}
+        </ul>
+      );
+      const root = document.getElementById("root");
+      ReactDOM.createRoot(root).render(mydiv);
+    </script>
+  </body>
+</html>

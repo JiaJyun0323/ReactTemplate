@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Hello World</title>
+    <!-- 引入 React 與 Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      .table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 30px auto;
+        background: #f9f9f9;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .table th,
+      .table td {
+        border: 1px solid #ccc;
+        padding: 10px 16px;
+        text-align: left;
+      }
+      .table th {
+        background: #4a90e2;
+        color: #fff;
+      }
+      .table tr:nth-child(even) {
+        background: #eef6fb;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const productInfos = [
+        { id: 1, name: "CPU", price: 1000, description: "Good CPU" },
+        { id: 2, name: "Ram", price: 500, description: "16GB RAM" },
+        { id: 3, name: "SSD", price: 200, description: "1TB SSD" },
+        { id: 4, name: "GPU", price: 1500, description: "High-end GPU" },
+        { id: 5, name: "Motherboard", price: 300, description: "ATX" },
+      ];
+      const myTable = (
+        <table className="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {productInfos.map((product) => (
+              <tr key={product.id}>
+                <td>{product.id}</td>
+                <td>{product.name}</td>
+                <td>${product.price}</td>
+                <td>{product.description}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      );
+      const root = document.getElementById("root");
+      ReactDOM.createRoot(root).render(myTable);
+    </script>
+  </body>
+</html>
