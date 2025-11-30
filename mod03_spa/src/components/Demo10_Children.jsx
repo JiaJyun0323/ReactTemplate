@@ -26,7 +26,7 @@ export default function Demo10_Children() {
           <img
             src={completeImg}
             alt="完成"
-            style={{ width: "30%", borderRadius: "8px" }}
+            style={{ width: "100%", borderRadius: "8px" }}
           />
           <h3>系統時間: {new Date().toLocaleString()} </h3>
         </Demo10_2>
