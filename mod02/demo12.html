@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Named Export Demo</title>
+  </head>
+  <body>
+    <h2>Named Export 示範</h2>
+
+    <div id="output"></div>
+
+    <script type="module">
+      import { greet, add, PI } from "./demo12_script.js";
+
+      const output = document.getElementById("output");
+
+      output.innerHTML = `
+        <p>${greet("World")}</p>
+        <p>2 + 3 = ${add(2, 3)}</p>
+        <p>PI = ${PI}</p>`;
+    </script>
+  </body>
+</html>

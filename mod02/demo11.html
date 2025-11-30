@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Hello World</title>
+    <!-- 引入 React 與 Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function MyDiv1() {
+        const msg = "<h1>Hello</h1>";
+
+        // 使用 dangerouslySetInnerHTML 讓 HTML 字串不被編碼
+        return <div> {msg}</div>;
+      }
+      function MyDiv2() {
+        const msg = "<h1>Hello</h1>";
+
+        // 使用 dangerouslySetInnerHTML 讓 HTML 字串不被編碼
+        return <div dangerouslySetInnerHTML={{ __html: msg }} />;
+      }
+
+      const root = document.getElementById("root");
+      ReactDOM.createRoot(root).render(<MyDiv2 />);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Default Export Demo</title>
+  </head>
+  <body>
+    <h1>Default Export 示範</h1>
+    <div id="root"></div>
+    <script type="module">
+      import obj from "./demo13_script.js";
+
+      const root = document.getElementById("root");
+
+      root.innerHTML = `
+      <p>數字：${obj.number}</p>
+      <p>字串：${obj.text}</p>
+      <p>函數：${obj.greet("React 學員")}</p>
+    `;
+    </script>
+  </body>
+</html>
