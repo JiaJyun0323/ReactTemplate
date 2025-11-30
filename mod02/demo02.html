@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Hello World</title>
+    <!-- 引入 React 與 Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- 引入 React 與 Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- React 要掛載的區域 -->
+    <div id="root"></div>
+
+    <!-- 撰寫 React 程式碼 -->
+    <script type="text/babel">
+      const msg = "mydiv";
+      var getMessage = () => "Hello World";
+
+      function Hello() {
+        return (
+          // {msg}，這裡的 {msg} 不可加上""，
+          // 因為這樣會被當成字串處理
+          <div id={msg}>
+            <h1> {getMessage()}</h1>
+          </div>
+        );
+      }
+      const root = document.getElementById("root");
+      ReactDOM.createRoot(root).render(<Hello />);
+    </script>
+  </body>
+</html>

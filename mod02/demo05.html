@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Hello World</title>
+    <!-- 引入 React 與 Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function MyDiv() {
+        // 設計 style 物件
+        const btnStyle = {
+          backgroundColor: "aqua",
+          color: "black",
+        };
+        const inputStyle = {
+          color: "red",
+        };
+        return (
+          <div>
+            <button style={btnStyle}>點我</button>
+            <br />
+            <input type="text" style={inputStyle} placeholder="請輸入文字" />
+          </div>
+        );
+      }
+      const root = document.getElementById("root");
+      ReactDOM.createRoot(root).render(<MyDiv />);
+    </script>
+  </body>
+</html>
