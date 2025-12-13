@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 export default function Demo18_useRef3() {
   const inputRef = useRef(null);
-
+  // can use useRef to currently control DOM tree
   const focusInput = () => {
     inputRef.current.focus();
     console.log(`Input focused: ${inputRef.current.value}`);

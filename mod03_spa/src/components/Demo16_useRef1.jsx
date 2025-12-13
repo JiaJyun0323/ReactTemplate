@@ -9,6 +9,7 @@ export default function Demo16_useRef() {
   // console.log(`root : ref: ${prevCountRef.current} , count: ${count}`);
 
   const addCount = (number) => {
+    //*note: count will be change when render, so prevCountRef could get correct value
     setCount((prevCount) => prevCount + number);
     // 更新 ref 為目前值
     prevCountRef.current = count;

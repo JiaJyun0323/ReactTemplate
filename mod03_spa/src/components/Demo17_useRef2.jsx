@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 export default function Demo17_useRef2() {
   let countRef = useRef(0);
-
+  // useRef will not re-render 
   function handleClick() {
     countRef.current = countRef.current + 1;
     console.log("count:", countRef.current);
