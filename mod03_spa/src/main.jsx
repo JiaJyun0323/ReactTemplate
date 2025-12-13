@@ -15,7 +15,7 @@ import { createRoot } from "react-dom/client";
 //  import App from "./components/Demo11_Container.jsx";
 // import App from "./components/Demo12_Effect.jsx";
 // import App from "./components/Demo13_NoEffect1.jsx";
- import App from "./components/Demo14_NoEffect2.jsx";
+//  import App from "./components/Demo14_NoEffect2.jsx";
 // import App from "./components/Demo15_NoEffect3.jsx";
 // import App from "./components/Demo16_useRef1.jsx";
 // import App from "./components/Demo17_useRef2.jsx";

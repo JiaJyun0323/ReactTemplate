@@ -1,39 +1,18 @@
-import React, { useState, useEffect } from "react";
-import "./Css/TodoList.css";
+import React, { useState } from "react";
 
+import "./Css/TodoList.css";
 import TodoList from "./Components/TodoList";
 import TodoInput from "./Components/TodoInput";
 import TodoProgress from "./Components/TodoProgress";
 
 export default function App() {
-  // const [todoList, setTodoList] = useState([
-  //   { id: 1, text: "待辦事項1", completed: false },
-  //   { id: 2, text: "待辦事項2", completed: false },
-  //   { id: 3, text: "待辦事項3", completed: false },
-  // ]);
+  const [todoList, setTodoList] = useState([
+    { id: 1, text: "待辦事項1", completed: false },
+    { id: 2, text: "待辦事項2", completed: false },
+    { id: 3, text: "待辦事項3", completed: false },
+  ]);
 
-  const [todoList, setTodoList] = useState(() => {
-    const saved = localStorage.getItem("todoList");
-    return saved
-      ? JSON.parse(saved)
-      : [];
-  });
-
-  // const [currentId, setCurrentId] = useState(3);
-
-  const [currentId, setCurrentId] = useState(() => {
-    const saved = localStorage.getItem("todoList");
-    if (saved) {
-      const list = JSON.parse(saved);
-      return list.length ? Math.max(...list.map((t) => t.id)) : 0;
-    }
-    return 0;
-  });
-
-  useEffect(() => {
-    localStorage.setItem("todoList", JSON.stringify(todoList));
-  }, [todoList]);
-
+  const [currentId, setCurrentId] = useState(3);
   const addTodo = (text) => {
     const newTodo = {
       id: currentId + 1,
@@ -78,8 +57,9 @@ export default function App() {
         saveTodo={saveTodo}
       />
       <TodoProgress todoList={todoList} />
+
       <button className="complete-all-btn" onClick={handleCompleteAll}>
-        all complete
+        全部完成
       </button>
     </div>
   );
