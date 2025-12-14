@@ -8,7 +8,7 @@ export default function Demo08() {
   const [name, setName] = useState("John Doe");
 
   //   const user = { email, name };
-
+  // 如果不加會一直重新賦值，導致下面重新渲染
   const user = useMemo(() => {
     return { email, name };
   }, [email, name]);

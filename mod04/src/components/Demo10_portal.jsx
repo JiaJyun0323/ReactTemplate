@@ -52,6 +52,7 @@ export default function Demo10_portal({ show, onClose, children }) {
         {children}
       </div>
     </div>,
+    //透過getElementById使子元件跳出父元件的dom，常用於跳脫父元件css
     document.getElementById("portal-root")
   );
 }

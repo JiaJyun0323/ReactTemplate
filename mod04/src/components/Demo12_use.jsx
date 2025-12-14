@@ -3,7 +3,7 @@ import Demo12_Child from "./Demo12_Child.jsx";
 
 // 主組件
 export default function Demo12_use() {
-  const promise = fetch("https://fakeresponder.com?sleep=2000").then((res) =>
+  const promise = fetch("https://dummyjson.com/test?sleep=2000").then((res) =>
     res.json()
   );
 
